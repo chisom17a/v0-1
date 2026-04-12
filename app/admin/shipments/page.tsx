@@ -1,5 +1,6 @@
 "use client"
 
+import type React from "react"
 import { useEffect, useState } from "react"
 import { db, collection, getDocs, doc, updateDoc, addDoc, serverTimestamp } from "@/lib/firebase"
 import type { Order } from "@/lib/types"
@@ -7,7 +8,7 @@ import { WHATSAPP_LINK } from "@/lib/types"
 import { Loader2, Eye, Truck, X as XIcon, ChevronDown, ChevronUp } from "lucide-react"
 import { toast } from "sonner"
 
-export default function AdminShipmentsPage() {
+export default function AdminShipmentsPage(): React.ReactElement {
   const [orders, setOrders] = useState<Order[]>([])
   const [loading, setLoading] = useState(true)
   const [expandedOrder, setExpandedOrder] = useState<string | null>(null)

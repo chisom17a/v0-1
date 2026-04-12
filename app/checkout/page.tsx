@@ -101,12 +101,6 @@ export default function CheckoutPage() {
       return
     }
 
-    // If amount to pay is 0 (fully covered by cashback), automatically complete order
-    if (amountToPay === 0) {
-      handleConfirmOrder()
-      return
-    }
-
     setStep("confirm")
   }
 

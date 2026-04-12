@@ -1,5 +1,6 @@
 "use client"
 
+import type React from "react"
 import { useEffect, useState } from "react"
 import { useParams, useRouter } from "next/navigation"
 import { useAuth } from "@/lib/auth-context"
@@ -12,7 +13,7 @@ import { SiteFooter } from "@/components/site-footer"
 import { Loader2, Copy, Check, Upload } from "lucide-react"
 import { toast } from "sonner"
 
-export default function PaymentPage() {
+export default function PaymentPage(): React.ReactElement {
   const params = useParams()
   const router = useRouter()
   const { user, loading: authLoading } = useAuth()

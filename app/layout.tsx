@@ -8,9 +8,9 @@ import { Toaster } from "sonner"
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 
 export const metadata: Metadata = {
-  title: "ChiStore - Shop Smart, Shop ChiStore",
+  title: "Excel World - Shop Smart, Shop Excel World",
   description:
-    "Your one-stop destination for quality products at unbeatable prices. Shop the latest trends with ChiStore.",
+    "Your one-stop destination for quality products at unbeatable prices. Shop the latest trends with Excel World.",
 }
 
 export default function RootLayout({

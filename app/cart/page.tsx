@@ -3,11 +3,11 @@
 import { useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
 import { useAuth } from "@/lib/auth-context"
-import { db, collection, getDocs, deleteDoc, doc, onSnapshot, updateDoc } from "@/lib/firebase"
+import { db, collection, getDocs, deleteDoc, doc, onSnapshot } from "@/lib/firebase"
 import type { CartItem } from "@/lib/types"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
-import { Trash2, Loader2, ShoppingCart, ArrowRight, Plus, Minus } from "lucide-react"
+import { Trash2, Loader2, ShoppingCart, ArrowRight } from "lucide-react"
 import { toast } from "sonner"
 import Link from "next/link"
 
@@ -23,7 +23,6 @@ export default function CartPage() {
   const [removing, setRemoving] = useState<string | null>(null)
   const [clearingAll, setClearingAll] = useState(false)
   const [showClearConfirm, setShowClearConfirm] = useState(false)
-  const [updating, setUpdating] = useState<string | null>(null)
 
   useEffect(() => {
     if (authLoading) return
@@ -65,19 +64,6 @@ export default function CartPage() {
       toast.error("Failed to clear cart")
     } finally {
       setClearingAll(false)
-    }
-  }
-
-  const updateQuantity = async (docId: string, newQuantity: number) => {
-    if (!user || newQuantity < 1) return
-    setUpdating(docId)
-    try {
-      await updateDoc(doc(db, "users", user.uid, "cart", docId), { quantity: newQuantity })
-      toast.success("Quantity updated")
-    } catch {
-      toast.error("Failed to update quantity")
-    } finally {
-      setUpdating(null)
     }
   }
 
@@ -128,43 +114,16 @@ export default function CartPage() {
                   </div>
                   <div className="flex-1">
                     <h3 className="font-medium text-foreground">{item.productName}</h3>
-                    <p className="mt-2 text-sm text-muted-foreground">
-                      {"\u20A6"}{item.price.toLocaleString()} each
+                    <p className="mt-0.5 text-sm text-muted-foreground">
+                      {"Qty: "}{item.quantity}
                     </p>
-                    <div className="mt-2 flex items-center gap-2">
-                      <button
-                        onClick={() => updateQuantity(item.docId, item.quantity - 1)}
-                        disabled={updating === item.docId || item.quantity <= 1}
-                        className="rounded p-1 text-muted-foreground hover:bg-muted transition-colors disabled:opacity-50"
-                      >
-                        <Minus className="h-4 w-4" />
-                      </button>
-                      <input
-                        type="number"
-                        min="1"
-                        value={item.quantity}
-                        onChange={(e) => {
-                          const newQty = parseInt(e.target.value) || 1
-                          if (newQty >= 1) updateQuantity(item.docId, newQty)
-                        }}
-                        className="h-8 w-12 rounded bg-muted text-center text-sm font-semibold text-foreground outline-none focus:ring-2 focus:ring-primary/20"
-                        disabled={updating === item.docId}
-                      />
-                      <button
-                        onClick={() => updateQuantity(item.docId, item.quantity + 1)}
-                        disabled={updating === item.docId}
-                        className="rounded p-1 text-muted-foreground hover:bg-muted transition-colors disabled:opacity-50"
-                      >
-                        <Plus className="h-4 w-4" />
-                      </button>
-                    </div>
-                    <p className="mt-2 text-base font-bold text-primary">
+                    <p className="mt-1 text-base font-bold text-primary">
                       {"\u20A6"}{(item.price * item.quantity).toLocaleString()}
                     </p>
                   </div>
                   <button
                     onClick={() => removeItem(item.docId)}
-                    disabled={removing === item.docId || updating === item.docId}
+                    disabled={removing === item.docId}
                     className="rounded-lg p-2 text-muted-foreground transition-colors hover:bg-destructive/10 hover:text-destructive disabled:opacity-50"
                     aria-label="Remove item"
                   >

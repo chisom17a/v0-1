@@ -1,5 +1,6 @@
 "use client"
 
+import type React from "react"
 import { useEffect, useState } from "react"
 import { db, collection, getDocs, doc, updateDoc, addDoc, serverTimestamp, getDoc } from "@/lib/firebase"
 import type { Order } from "@/lib/types"
@@ -7,7 +8,7 @@ import { WHATSAPP_LINK } from "@/lib/types"
 import { Loader2, Eye, Check, X as XIcon, ImageIcon } from "lucide-react"
 import { toast } from "sonner"
 
-export default function AdminPaymentsPage() {
+export default function AdminPaymentsPage(): React.ReactElement {
   const [orders, setOrders] = useState<Order[]>([])
   const [loading, setLoading] = useState(true)
   const [viewingProof, setViewingProof] = useState<string | null>(null)

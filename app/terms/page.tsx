@@ -21,7 +21,7 @@ export default function TermsPage() {
           <section>
             <h2 className="mb-2 text-lg font-semibold text-foreground">1. Introduction</h2>
             <p>
-              Welcome to ChiStore. By accessing or using our website, you agree to be bound by these Terms and Conditions.
+              Welcome to Excel World. By accessing or using our website, you agree to be bound by these Terms and Conditions.
               Please read them carefully before making any purchases or creating an account. If you do not agree to these terms,
               please do not use our platform.
             </p>
@@ -30,7 +30,7 @@ export default function TermsPage() {
           <section>
             <h2 className="mb-2 text-lg font-semibold text-foreground">2. Account Registration</h2>
             <p>
-              To make purchases on ChiStore, you must create an account and verify your email address. You are responsible
+              To make purchases on Excel World, you must create an account and verify your email address. You are responsible
               for maintaining the confidentiality of your account credentials. You agree to provide accurate and complete
               information during registration and to keep your account information up to date.
             </p>
@@ -51,7 +51,7 @@ export default function TermsPage() {
             <p>
               All orders are subject to availability and confirmation. Payment must be made through the approved payment method
               (bank transfer to the designated account). Proof of payment must be submitted for verification. Orders will only
-              be processed after payment has been verified by our finance department. ChiStore reserves the right to reject
+              be processed after payment has been verified by our finance department. Excel World reserves the right to reject
               any order at its discretion.
             </p>
           </section>
@@ -59,7 +59,7 @@ export default function TermsPage() {
           <section>
             <h2 className="mb-2 text-lg font-semibold text-foreground">5. Cashback Policy</h2>
             <p>
-              Cashback credits may be issued at the discretion of ChiStore administration. Cashback can be used for full or
+              Cashback credits may be issued at the discretion of Excel World administration. Cashback can be used for full or
               partial payment of orders. Cashback balance is non-transferable and cannot be exchanged for cash. In the event
               of an order rejection, the paid amount will be credited to your cashback balance.
             </p>
@@ -68,7 +68,7 @@ export default function TermsPage() {
           <section>
             <h2 className="mb-2 text-lg font-semibold text-foreground">6. Shipping and Delivery</h2>
             <p>
-              Delivery times may vary depending on your location within Nigeria. ChiStore is not responsible for delays
+              Delivery times may vary depending on your location within Nigeria. Excel World is not responsible for delays
               caused by circumstances beyond our control. You are required to provide accurate shipping information including
               a valid phone number and address. Delivery will be attempted to the address specified during checkout.
             </p>
@@ -94,7 +94,7 @@ export default function TermsPage() {
           <section>
             <h2 className="mb-2 text-lg font-semibold text-foreground">9. Account Termination</h2>
             <p>
-              ChiStore reserves the right to suspend or terminate accounts that violate these terms, engage in fraudulent
+              Excel World reserves the right to suspend or terminate accounts that violate these terms, engage in fraudulent
               activity, or misuse the platform in any way.
             </p>
           </section>
@@ -113,7 +113,7 @@ export default function TermsPage() {
           <section>
             <h2 className="mb-2 text-lg font-semibold text-foreground">11. Changes to Terms</h2>
             <p>
-              ChiStore reserves the right to modify these Terms and Conditions at any time. Changes will be effective
+              Excel World reserves the right to modify these Terms and Conditions at any time. Changes will be effective
               immediately upon posting on the website. Your continued use of the platform after changes constitutes
               acceptance of the updated terms.
             </p>

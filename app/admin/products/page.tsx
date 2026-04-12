@@ -1,7 +1,6 @@
 "use client"
 
-import React from "react"
-
+import type React from "react"
 import { useEffect, useState } from "react"
 import { db, collection, getDocs, doc, deleteDoc, addDoc, updateDoc, serverTimestamp } from "@/lib/firebase"
 import { uploadToImgBB } from "@/lib/imgbb"
@@ -34,7 +33,7 @@ const emptyForm: ProductForm = {
   limitedToStates: [],
 }
 
-export default function AdminProductsPage() {
+export default function AdminProductsPage(): React.ReactElement {
   const [products, setProducts] = useState<Product[]>([])
   const [loading, setLoading] = useState(true)
   const [showModal, setShowModal] = useState(false)

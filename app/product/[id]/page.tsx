@@ -22,7 +22,6 @@ export default function ProductDetailPage() {
   const [selectedImages, setSelectedImages] = useState<string[]>([])
   const [isLiked, setIsLiked] = useState(false)
   const [addingToCart, setAddingToCart] = useState(false)
-  const [quantity, setQuantity] = useState(1)
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -103,12 +102,11 @@ export default function ProductDetailPage() {
         productName: product.name,
         productImage: product.images[0] || "",
         price: product.hasDiscount ? product.discountPrice : product.normalPrice,
-        quantity: quantity,
+        quantity: 1,
         selectedImages: selectedImages.length > 0 ? selectedImages : [],
       }
       await addDoc(cartRef, cartItem)
-      toast.success(`Added ${quantity} item${quantity > 1 ? 's' : ''} to cart!`)
-      setQuantity(1)
+      toast.success("Added to cart!")
     } catch {
       toast.error("Failed to add to cart")
     } finally {
@@ -226,35 +224,11 @@ export default function ProductDetailPage() {
               )}
             </div>
 
-            <div className="mt-6 flex flex-col gap-4">
-              <div className="flex items-center gap-3">
-                <label className="text-sm font-medium text-foreground">Quantity:</label>
-                <div className="flex items-center gap-2 rounded-lg border border-input bg-muted p-1">
-                  <button
-                    onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                    className="flex h-8 w-8 items-center justify-center rounded text-foreground hover:bg-background transition-colors"
-                  >
-                    −
-                  </button>
-                  <input
-                    type="number"
-                    min="1"
-                    value={quantity}
-                    onChange={(e) => setQuantity(Math.max(1, parseInt(e.target.value) || 1))}
-                    className="h-8 w-12 bg-transparent text-center text-sm font-semibold text-foreground outline-none"
-                  />
-                  <button
-                    onClick={() => setQuantity(quantity + 1)}
-                    className="flex h-8 w-8 items-center justify-center rounded text-foreground hover:bg-background transition-colors"
-                  >
-                    +
-                  </button>
-                </div>
-              </div>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <button
                 onClick={handleAddToCart}
                 disabled={addingToCart}
-                className="flex items-center justify-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90 disabled:opacity-50"
+                className="flex flex-1 items-center justify-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90 disabled:opacity-50"
               >
                 {addingToCart ? (
                   <Loader2 className="h-4 w-4 animate-spin" />

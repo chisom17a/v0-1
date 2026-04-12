@@ -109,7 +109,7 @@ export function SiteFooter() {
             </a>
           </p>
           <p className="mt-1">
-            {"Copyright "}&copy;{" "}{new Date().getFullYear()} ChiStore. All rights reserved.
+            {"Copyright "}&copy;{" "}{new Date().getFullYear()} Excel World. All rights reserved.
           </p>
         </div>
       </div>

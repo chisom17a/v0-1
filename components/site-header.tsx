@@ -45,9 +45,9 @@ export function SiteHeader() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
         <Link href="/" className="flex items-center gap-2">
           <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary">
-            <span className="text-lg font-bold text-primary-foreground">C</span>
+            <span className="text-lg font-bold text-primary-foreground">E</span>
           </div>
-          <span className="text-xl font-bold text-foreground">ChiStore</span>
+          <span className="text-xl font-bold text-foreground">Excel World</span>
         </Link>
 
         <nav className="flex items-center gap-1">

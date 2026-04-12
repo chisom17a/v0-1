@@ -42,7 +42,7 @@ export default function HomePage() {
         <section className="bg-primary px-4 py-16 text-primary-foreground md:py-24">
           <div className="mx-auto max-w-7xl text-center">
             <h1 className="text-balance text-4xl font-bold md:text-5xl lg:text-6xl">
-              Shop Smart, Shop ChiStore
+              Shop Smart, Shop Excel World
             </h1>
             <p className="mx-auto mt-4 max-w-2xl text-pretty text-lg text-primary-foreground/80">
               Your one-stop destination for quality products at unbeatable prices. Discover amazing deals every day.
